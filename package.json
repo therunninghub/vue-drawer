@@ -20,11 +20,10 @@
     "test:unit": "vue-cli-service test:unit",
     "report": "vue-cli-service build --report",
     "bundle": "npm run lint --fix && npm run test:unit && npm run build",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md"
   },
   "dependencies": {
     "core-js": "^3.9.1",
-    "v-animate-css": "^0.0.3",
     "vue": "^2.6.12"
   },
   "devDependencies": {
