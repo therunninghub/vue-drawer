@@ -14,12 +14,12 @@
     >
       <div
         key="content"
-        :class="{ closeable, [position.toLowerCase()]: true }"
+        :class="{ closable, [position.toLowerCase()]: true }"
         v-if="$slots.default"
         class="vue-drawer cover"
         :style="indexClass()"
       >
-        <div @click.stop="close" v-if="closeable" class="close-btn">
+        <div @click.stop="close" v-if="closable" class="close-btn">
           <div class="leftright"></div>
           <div class="rightleft"></div>
         </div>
@@ -41,7 +41,7 @@ export default {
       default: "slide",
       validator: (value) => ["slide", "bounce"].includes(value),
     },
-    closeable: {
+    closable: {
       type: Boolean,
       default: true,
     },

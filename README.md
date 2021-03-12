@@ -29,7 +29,7 @@ yarn add @therunninghub/vue-drawer
 <template>
   <div id="app">
     <button @click="toggle">toggle</button>
-    <Drawer @close="toggle" align="left" :closeable="true">
+    <Drawer @close="toggle" align="left" :closable="true">
       <div v-if="open">content here</div>
     </Drawer>
   </div>
@@ -62,7 +62,7 @@ export default {
 | :----------- | :------ | :-------- | :------------------------------------------------------------------------------------------------------- |
 | position     | String  |           | One of "left", "up", "right", "down", default: `right`. The position of the drawer.                      |
 | animation    | String  |           | One of "slide", "bounce", default: `slide`. The animation of the drawer.                                 |
-| closeable    | Boolean |           | show the x - close button, default: `true`                                                               |
+| closable     | Boolean |           | show the x - close button, default: `true`                                                               |
 | mask         | Boolean |           | show the mask layer - close button, default: `true`                                                      |
 | maskClosable | Boolean |           | emit 'close' event when click on mask layer, default: `false`                                            |
 | zIndex       | Number  |           | z-index value for the drawer, the nest drawer's z-index will be increased automatically, default: `1000` |
@@ -87,7 +87,7 @@ export default {
 <template>
   ...
   <button @click="toggle">Open/Close</button>
-  <Drawer @close="toggle" :align="align" :closeable="true">
+  <Drawer @close="toggle" :align="align" :closable="true">
     <div v-if="open">
       <span @click="innerOpen=true">
         content here
@@ -98,7 +98,7 @@ export default {
         content here
         content here
       </span>
-      <Drawer @close="innerOpen=false" :align="align" :closeable="true">
+      <Drawer @close="innerOpen=false" :align="align" :closable="true">
         <div v-if="innerOpen">
           content here
           content here

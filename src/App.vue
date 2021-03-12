@@ -29,7 +29,7 @@
       @close="toggle"
       :animation="animation"
       :position="position"
-      :closeable="true"
+      :closable="true"
     >
       <div v-if="open">
         <span @click="clickContent">
@@ -42,7 +42,7 @@
           :maskClosable="true"
           @close="innerOpen = false"
           :position="position"
-          :closeable="true"
+          :closable="true"
         >
           <div v-if="innerOpen">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni

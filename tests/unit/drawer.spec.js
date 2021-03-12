@@ -40,7 +40,7 @@ describe("Drawer.vue", () => {
 
   it("renders props with close event", () => {
     const wrapper = shallowMount(Drawer, {
-      propsData: { mask: false, closeable: true, maskClosable: true },
+      propsData: { mask: false, closable: true, maskClosable: true },
       slots: {
         default: "<div>hello</div>",
       },
@@ -53,7 +53,7 @@ describe("Drawer.vue", () => {
 
   it("renders props with close by mask event", () => {
     const wrapper = shallowMount(Drawer, {
-      propsData: { mask: true, closeable: true, maskClosable: true },
+      propsData: { mask: true, closable: true, maskClosable: true },
       slots: {
         default: "<div>hello</div>",
       },
@@ -66,7 +66,7 @@ describe("Drawer.vue", () => {
 
   it("renders props with maskClosable as false", () => {
     const wrapper = shallowMount(Drawer, {
-      propsData: { mask: true, closeable: true, maskClosable: false },
+      propsData: { mask: true, closable: true, maskClosable: false },
       slots: {
         default: "<div>hello</div>",
       },
@@ -81,7 +81,7 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: {
         mask: true,
-        closeable: true,
+        closable: true,
         maskClosable: false,
         zIndex: 10002,
       },
@@ -96,7 +96,7 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: {
         mask: true,
-        closeable: true,
+        closable: true,
         maskClosable: false,
       },
       slots: {
