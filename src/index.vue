@@ -2,22 +2,22 @@
   <div>
     <transition name="fade" mode="out-in">
       <div
-        :style="indexCls()"
+        :style="indexClass()"
         @click="onMask"
         v-if="$slots.default"
         :class="{ mask }"
       ></div>
     </transition>
     <transition
-      :enter-active-class="alignInCls"
-      :leave-active-class="alignOutCls"
+      :enter-active-class="enterClass"
+      :leave-active-class="leaveClass"
     >
       <div
         key="content"
-        :class="{ closeable, [align.toLowerCase()]: true }"
+        :class="{ closeable, [position.toLowerCase()]: true }"
         v-if="$slots.default"
-        class="vue-simple-drawer cover"
-        :style="indexCls()"
+        class="vue-drawer cover"
+        :style="indexClass()"
       >
         <div @click.stop="close" v-if="closeable" class="close-btn">
           <div class="leftright"></div>
@@ -31,40 +31,42 @@
 <script>
 export default {
   props: {
-    align: {
+    position: {
       type: String,
       default: "right",
-      validator: function(value) {
-        // The value must match one of these strings
-        return ["left", "up", "right", "down"].indexOf(value) !== -1;
-      }
+      validator: (value) => ["left", "up", "right", "down"].includes(value),
+    },
+    animation: {
+      type: String,
+      default: "slide",
+      validator: (value) => ["slide", "bounce"].includes(value),
     },
     closeable: {
       type: Boolean,
-      default: true
+      default: true,
     },
     mask: {
       type: Boolean,
-      default: true
+      default: true,
     },
     maskClosable: {
       type: Boolean,
-      default: false
+      default: false,
     },
     zIndex: {
       type: Number,
       default() {
-        return this.simpleDrawerIndex;
-      }
-    }
+        return this.drawerIndex;
+      },
+    },
   },
   provide() {
     return {
-      simpleDrawerIndex: this.computedIndex + 1
+      drawerIndex: this.computedIndex + 1,
     };
   },
   inject: {
-    simpleDrawerIndex: { default: 1000 }
+    drawerIndex: { default: 1000 },
   },
 
   methods: {
@@ -76,28 +78,29 @@ export default {
         this.close();
       }
     },
-    indexCls(offset = 0) {
+    indexClass(offset = 0) {
       return {
-        zIndex: this.computedIndex + offset
+        zIndex: this.computedIndex + offset,
       };
-    }
+    },
   },
   computed: {
-    alignInCls() {
-      return `animated bounceIn${this.align.toLowerCase()}`;
+    positionSuffixClass() {
+      const firstLetter = this.position.substr(0, 1);
+      return firstLetter.toUpperCase() + this.position.substr(1);
     },
-    alignOutCls() {
-      return `animated bounceOut${this.align.toLowerCase()}`;
+    enterClass() {
+      return `animated ${this.animation}In${this.positionSuffixClass}`;
     },
-    alighCloseCls() {
-      return `close-${this.align.toLowerCase()}`;
+    leaveClass() {
+      return `animated ${this.animation}Out${this.positionSuffixClass}`;
     },
     computedIndex() {
-      return this.zIndex || this.simpleDrawerIndex;
-    }
-  }
+      return this.zIndex || this.drawerIndex;
+    },
+  },
 };
 </script>
 <style lang="scss">
-@import "index";
+@import "@/assets/scss/index";
 </style>

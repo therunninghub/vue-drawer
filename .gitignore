@@ -1,6 +1,9 @@
 .DS_Store
-node_modules
-/dist
+node_modules/
+.nyc_output/
+coverage/
+docs/
+dist/demo.html
 
 # local env files
 .env.local

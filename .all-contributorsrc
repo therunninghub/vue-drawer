@@ -6,10 +6,10 @@
   "commit": false,
   "contributors": [
     {
-      "login": "dreambo8563",
-      "name": "Vincent Guo",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/6948318?v=4",
-      "profile": "https://dreambo8563.github.io/",
+      "login": "ansidev",
+      "name": "Le Minh Tri",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6688235?s=460&u=e728f0f36111ca45bc732002f5f3723a6820bb56&v=4",
+      "profile": "https://ansidev.github.io/",
       "contributions": [
         "code",
         "doc",
@@ -18,8 +18,8 @@
     }
   ],
   "contributorsPerLine": 7,
-  "projectName": "vue-simple-drawer",
-  "projectOwner": "dreambo8563",
+  "projectName": "@therunninghub/vue-drawer",
+  "projectOwner": "therunninghub",
   "repoType": "github",
   "repoHost": "https://github.com"
 }

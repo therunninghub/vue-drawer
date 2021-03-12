@@ -1,47 +1,56 @@
 {
-  "name": "vue-simple-drawer",
+  "name": "@therunninghub/vue-drawer",
   "version": "1.0.6",
-  "author": "dreambo8563",
-  "main": "dist/vue-simple-drawer.umd.min.js",
+  "author": "The Running Hub Team &lt;engineer@therunninghub.net&gt;",
+  "contributors": [
+    {
+      "name": "Le Minh Tri",
+      "email": "tri@therunninghub.net"
+    }
+  ],
+  "main": "dist/vue-drawer.umd.min.js",
   "private": false,
-  "description": "A tiny Drawer component for vue",
+  "description": "A tiny Drawer component for Vue",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build --target lib --name vue-simple-drawer src/index.js",
-    "test": "codecov --token=b0f70ed0-c1fb-4494-819d-cc0f45430698",
-    "pages": "vue-cli-service build --dest docs",
+    "build": "npm run build:lib && npm run build:docs",
+    "build:lib": "vue-cli-service build --target lib --name vue-drawer src/index.js",
+    "build:docs": "vue-cli-service build --dest docs",
     "lint": "vue-cli-service lint",
     "test:unit": "vue-cli-service test:unit",
     "report": "vue-cli-service build --report",
+    "bundle": "npm run lint --fix && npm run test:unit && npm run build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
-    "core-js": "^3.4.3",
-    "vue": "^2.6.10"
+    "core-js": "^3.9.1",
+    "v-animate-css": "^0.0.3",
+    "vue": "^2.6.12"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^4.1.0",
-    "cz-conventional-changelog": "^3.0.0",
-    "@vue/cli-plugin-eslint": "^4.1.0",
-    "@vue/cli-plugin-unit-jest": "^4.1.0",
-    "@vue/cli-service": "^4.1.0",
-    "@vue/eslint-config-prettier": "^5.0.0",
-    "@vue/test-utils": "1.0.0-beta.29",
-    "babel-eslint": "^10.0.3",
-    "eslint": "^5.16.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-vue": "^5.0.0",
-    "prettier": "^1.19.1",
-    "sass": "^1.23.7",
-    "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "@vue/cli-plugin-babel": "^4.5.11",
+    "@vue/cli-plugin-eslint": "^4.5.11",
+    "@vue/cli-plugin-unit-jest": "^4.5.11",
+    "@vue/cli-service": "^4.5.11",
+    "@vue/eslint-config-prettier": "^6.0.0",
+    "@vue/test-utils": "1.1.3",
+    "babel-eslint": "^10.1.0",
+    "conventional-changelog-cli": "^2.1.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^7.21.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-vue": "^7.7.0",
+    "prettier": "^2.2.1",
+    "sass": "^1.32.8",
+    "sass-loader": "^10.1.1",
+    "vue-template-compiler": "^2.6.12"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dreambo8563/vue-simple-drawer.git"
+    "url": "https://github.com/therunninghub/vue-drawer.git"
   },
   "bugs": {
-    "url": "https://github.com/dreambo8563/vue-simple-drawer/issues"
+    "url": "https://github.com/therunninghub/vue-drawer/issues"
   },
   "license": "MIT",
   "files": [

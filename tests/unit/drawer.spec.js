@@ -2,28 +2,27 @@ import { shallowMount } from "@vue/test-utils";
 import Drawer from "../../src/index.vue";
 
 describe("Drawer.vue", () => {
-  it("renders props.align when passed", () => {
-    const align = "left";
+  it("renders props.position when passed", () => {
+    const position = "left";
     const wrapper = shallowMount(Drawer, {
-      propsData: { align },
+      propsData: { position },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
 
-    expect(wrapper.vm.alignInCls).toBe("animated bounceInleft");
-    expect(wrapper.vm.alignOutCls).toBe("animated bounceOutleft");
-    expect(wrapper.vm.alighCloseCls).toBe("close-left");
+    expect(wrapper.vm.enterClass).toBe("animated slideInLeft");
+    expect(wrapper.vm.leaveClass).toBe("animated slideOutLeft");
   });
 
   it("renders default slots when passed", () => {
     const wrapper = shallowMount(Drawer, {
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
 
-    expect(wrapper.find(".vue-simple-drawer").isVisible()).toBeTruthy();
+    expect(wrapper.find(".vue-drawer").isVisible()).toBeTruthy();
     expect(wrapper.find(".mask").isVisible()).toBeTruthy();
   });
 
@@ -31,11 +30,11 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: { mask: false },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
 
-    expect(wrapper.find(".vue-simple-drawer").isVisible()).toBeTruthy();
+    expect(wrapper.find(".vue-drawer").isVisible()).toBeTruthy();
     expect(wrapper.find(".mask").exists()).not.toBeTruthy();
   });
 
@@ -43,8 +42,8 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: { mask: false, closeable: true, maskClosable: true },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
     const stub = jest.fn();
     wrapper.vm.$on("close", stub);
@@ -56,8 +55,8 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: { mask: true, closeable: true, maskClosable: true },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
     const stub = jest.fn();
     wrapper.vm.$on("close", stub);
@@ -69,8 +68,8 @@ describe("Drawer.vue", () => {
     const wrapper = shallowMount(Drawer, {
       propsData: { mask: true, closeable: true, maskClosable: false },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
     const stub = jest.fn();
     wrapper.vm.$on("close", stub);
@@ -84,11 +83,11 @@ describe("Drawer.vue", () => {
         mask: true,
         closeable: true,
         maskClosable: false,
-        zIndex: 10002
+        zIndex: 10002,
       },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
     expect(wrapper.vm.computedIndex).toEqual(10002);
   });
@@ -98,11 +97,11 @@ describe("Drawer.vue", () => {
       propsData: {
         mask: true,
         closeable: true,
-        maskClosable: false
+        maskClosable: false,
       },
       slots: {
-        default: "<div>hello</div>"
-      }
+        default: "<div>hello</div>",
+      },
     });
     expect(wrapper.vm.computedIndex).toEqual(1000);
   });

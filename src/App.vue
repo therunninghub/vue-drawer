@@ -2,22 +2,22 @@
   <div id="app">
     <div class="demo-container">
       <div>
-        <input type="radio" id="left" value="left" v-model="align" />
+        <input type="radio" id="left" value="left" v-model="position" />
         <label for="left">left</label>
       </div>
 
       <div>
-        <input type="radio" id="right" value="right" v-model="align" />
+        <input type="radio" id="right" value="right" v-model="position" />
         <label for="right">right</label>
       </div>
 
       <div>
-        <input type="radio" id="up" value="up" v-model="align" />
+        <input type="radio" id="up" value="up" v-model="position" />
         <label for="up">up</label>
       </div>
 
       <div>
-        <input type="radio" id="down" value="down" v-model="align" />
+        <input type="radio" id="down" value="down" v-model="position" />
         <label for="down">down</label>
       </div>
     </div>
@@ -27,21 +27,29 @@
       :maskClosable="true"
       :zIndex="1002"
       @close="toggle"
-      :align="align"
+      :animation="animation"
+      :position="position"
       :closeable="true"
     >
       <div v-if="open">
         <span @click="clickContent">
-          content here content here content here content here content here
-          content here content here
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit porro
+          maxime minima sapiente deserunt? Omnis voluptate velit recusandae et,
+          rem natus exercitationem ullam doloremque ratione earum non cupiditate
+          explicabo neque!
         </span>
         <Drawer
           :maskClosable="true"
           @close="innerOpen = false"
-          :align="align"
+          :position="position"
           :closeable="true"
         >
-          <div v-if="innerOpen">content here content here content here</div>
+          <div v-if="innerOpen">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni
+            architecto dolor iure atque, suscipit quae deserunt impedit quasi
+            quisquam, aperiam soluta nobis consequuntur maiores alias beatae.
+            Molestiae culpa impedit sit.
+          </div>
         </Drawer>
       </div>
     </Drawer>
@@ -57,11 +65,12 @@ export default {
     return {
       open: false,
       innerOpen: false,
-      align: "left"
+      animation: "slide",
+      position: "left",
     };
   },
   components: {
-    Drawer
+    Drawer,
   },
   methods: {
     toggle() {
@@ -69,13 +78,13 @@ export default {
     },
     clickContent() {
       this.innerOpen = true;
-    }
+    },
   },
   watch: {
-    align: function() {
+    position: function () {
       this.open = false;
-    }
-  }
+    },
+  },
 };
 </script>
 

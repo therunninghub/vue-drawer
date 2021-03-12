@@ -1,17 +1,14 @@
 @import "variable";
 @import "animation";
 
-.vue-simple-drawer {
+.vue-drawer {
   // default style
   padding: 20px;
-  color: $--simple-drawer-fg-color;
-  background: $--simple-drawer-bg-color;
+  color: $drawerTextColor;
+  background: $drawerBackgroundColor;
   // common
   position: fixed;
   overflow: auto;
-  // top: 0;
-  // z-index: 99;
-  // bottom: 0;
 
   &.closeable {
     padding-top: 40px;
@@ -40,16 +37,11 @@
   }
 
   .close-btn {
-    // position: relative;
-    // margin: auto;
-    width: $--simple-drawer-close-width;
-    height: $--simple-drawer-close-width;
-    // margin-top: 100px;
-    // cursor: pointer;
+    width: $drawerCloseButtonWidth;
+    height: $drawerCloseButtonWidth;
     position: absolute;
     right: 0;
     top: 20px;
-    // z-index: 100;
     transform: translate(-50%, -50%);
     color: currentColor;
     font-size: 20px;
@@ -57,10 +49,10 @@
     user-select: none;
     .leftright {
       height: 4px;
-      width: $--simple-drawer-close-width;
+      width: $drawerCloseButtonWidth;
       position: absolute;
-      margin-top: $--simple-drawer-close-width/2;
-      background-color: $--simple-drawer-softorange;
+      margin-top: $drawerCloseButtonWidth/2;
+      background-color: $drawerCloseButtonColor;
       border-radius: 2px;
       transform: rotate(45deg);
       transition: all 0.3s ease-in;
@@ -68,10 +60,10 @@
 
     .rightleft {
       height: 4px;
-      width: $--simple-drawer-close-width;
+      width: $drawerCloseButtonWidth;
       position: absolute;
-      margin-top: $--simple-drawer-close-width/2;
-      background-color: $--simple-drawer-softorange;
+      margin-top: $drawerCloseButtonWidth/2;
+      background-color: $drawerCloseButtonColor;
       border-radius: 2px;
       transform: rotate(-45deg);
       transition: all 0.3s ease-in;
@@ -83,11 +75,11 @@
 
     &:hover .leftright {
       transform: rotate(-45deg);
-      background-color: $--simple-drawer-tomatored;
+      background-color: $drawerCloseButtonHoverColor;
     }
     &:hover .rightleft {
       transform: rotate(45deg);
-      background-color: $--simple-drawer-tomatored;
+      background-color: $drawerCloseButtonHoverColor;
     }
   }
 }
@@ -99,15 +91,4 @@
   left: 0;
   top: 0;
   height: 100%;
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   background: grey;
-  //   opacity: 0.5;
-  //   width: 100%;
-  //   left: 0;
-  //   top: 0;
-  //   height: 100%;
-  //   // z-index: 98;
-  // }
 }
