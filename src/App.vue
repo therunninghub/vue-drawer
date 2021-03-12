@@ -57,7 +57,7 @@
 </template>
 
 <script>
-import Drawer from "@/index.vue";
+import Drawer from "@/Drawer.vue";
 import "./demo.scss";
 export default {
   name: "app",

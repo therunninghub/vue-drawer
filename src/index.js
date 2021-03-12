@@ -1,2 +1,2 @@
-import drawer from "./index.vue";
-export default drawer;
+import Drawer from "./Drawer.vue";
+export default Drawer;

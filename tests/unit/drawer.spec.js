@@ -1,5 +1,5 @@
 import { shallowMount } from "@vue/test-utils";
-import Drawer from "../../src/index.vue";
+import Drawer from "../../src/Drawer.vue";
 
 describe("Drawer.vue", () => {
   it("renders props.position when passed", () => {
