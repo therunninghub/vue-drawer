@@ -1,3 +1,12 @@
+## [1.0.10](https://github.com/therunninghub/vue-drawer/compare/v1.0.9...v1.0.10) (2021-03-12)
+
+
+### Features
+
+* **prop:** change prop closeable -> closable ([bf9ba45](https://github.com/therunninghub/vue-drawer/commit/bf9ba45d85f9ae71bbef24863b6966344fc3a34c))
+
+
+
 ## [1.0.9](https://github.com/therunninghub/vue-drawer/compare/v1.0.8...v1.0.9) (2021-03-12)
 
 
