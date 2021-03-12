@@ -1,0 +1,14 @@
+.all-contributorsrc
+.browserslistrc
+.eslintrc.js
+*.config.js
+*.md
+coverage/
+dist/demo.html
+docs/
+Makefile
+public/
+src/App.vue
+src/demo.scss
+src/main.js
+tests/

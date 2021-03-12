@@ -52,13 +52,6 @@
     "url": "https://github.com/therunninghub/vue-drawer/issues"
   },
   "license": "MIT",
-  "files": [
-    "dist/*",
-    "src/*",
-    "package.json",
-    "*.js",
-    "README.md"
-  ],
   "keywords": [
     "vue",
     "drawer",
