@@ -16,6 +16,7 @@ coverage:
 
 build-lib:
 	npm run build:lib
+	rm -f dist/demo.html
 
 build-docs:
 	npm run build:docs
