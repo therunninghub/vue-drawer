@@ -2137,7 +2137,7 @@ if (typeof window !== 'undefined') {
 // Indicate to webpack that this file can be concatenated
 /* harmony default export */ var setPublicPath = (null);
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"0841def6-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=80322a24&
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"3e47ff13-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/index.vue?vue&type=template&id=80322a24&
 var render = function () {
 var _obj;
 var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('transition',{attrs:{"name":"fade","mode":"out-in"}},[(_vm.$slots.default)?_c('div',{class:{ mask: _vm.mask },style:(_vm.indexClass()),on:{"click":_vm.onMask}}):_vm._e()]),_c('transition',{attrs:{"enter-active-class":_vm.enterClass,"leave-active-class":_vm.leaveClass}},[(_vm.$slots.default)?_c('div',{key:"content",staticClass:"vue-drawer cover",class:( _obj = { closeable: _vm.closeable }, _obj[_vm.position.toLowerCase()] = true, _obj ),style:(_vm.indexClass())},[(_vm.closeable)?_c('div',{staticClass:"close-btn",on:{"click":function($event){$event.stopPropagation();return _vm.close($event)}}},[_c('div',{staticClass:"leftright"}),_c('div',{staticClass:"rightleft"})]):_vm._e(),_vm._t("default")],2):_vm._e()])],1)}
